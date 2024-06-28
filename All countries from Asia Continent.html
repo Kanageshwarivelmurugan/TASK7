@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fullstack</title>
+</head>
+
+<body>
+    <h1>Javascriptcode</h1>
+
+    <script>
+ let api=new XMLHttpRequest();
+ api.open("Get","https://restcountries.com/v3.1/all",true);
+ api.send();
+ api.onload=function(){
+    let result=JSON.parse(api.response);
+   let res=result.filter((reg)=>reg.region === "Asia");
+   console.log("==> A.)")
+   res.map((_name)=>console.log(`${_name.name.common}`))
+
+    
+ }       
+
+ 
+        
+         
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fullstack</title>
+</head>
+
+<body>
+    <h1>Javascriptcode</h1>
+
+    <script>
+ let api=new XMLHttpRequest();
+ api.open("Get","https://restcountries.com/v3.1/all",true);
+ api.send();
+ api.onload=function(){
+    let data=api.response;
+    let result=JSON.parse(api.response);
+   console.log("==>B.)")
+   let people=result.filter(peo=>peo.population>200000)
+   people.map(peo=> console.log(peo.name.common))
+    
+ }       
+
+ 
+        
+         
+
+
+
+    </script>
+</body>
+
+</html>
